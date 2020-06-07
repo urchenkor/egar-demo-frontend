@@ -1,17 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import SubjectForm from "./form";
+import SubjectRow from "./SubjectRow";
+import RenderLineCharts from "./LineCharts";
+
+const url = 'http://localhost:8080//api/subject';
+
+class Result extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            subjects: []
+        }
+    }
+
+    componentDidMount() {
+        fetch(url)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    subjects: json,
+                })
+            });
+    }
+
+    render() {
+        this.componentDidMount();
+
+        const {subjects} = this.state;
+        const rows = [];
+        subjects.forEach((subject) =>
+            rows.push(
+                <SubjectRow
+                    subject = {subject}
+                    key = {subject.id}
+                />
+                )
+        )
+
+        return (
+            <div>
+                <SubjectForm />
+            <table className="mainTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+            </table>
+                    <RenderLineCharts subjects={this.state.subjects} />
+            </div>
+        );
+    }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Result />,
+    document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
