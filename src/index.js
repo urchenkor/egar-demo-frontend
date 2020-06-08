@@ -40,7 +40,7 @@ class Result extends React.Component {
         )
 
         return (
-            <div>
+            <div className="mainContent">
                 <SubjectForm />
             <table className="mainTable">
                 <thead>
@@ -48,6 +48,8 @@ class Result extends React.Component {
                         <th>Date</th>
                         <th>Name</th>
                         <th>Cost</th>
+                        <th>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>{rows}</tbody>

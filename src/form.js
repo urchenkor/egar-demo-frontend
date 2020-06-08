@@ -29,7 +29,7 @@ class SubjectForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('Отправили: ' +  this.state.toString());
+        alert('Отправили: ' +  this.state.tool);
 
         fetch(url, {
             method: 'POST',
@@ -50,17 +50,17 @@ class SubjectForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Date:
-                    <input type="date" value={this.state.value} name="date" onChange={this.handleChangeDate}/>
+                    <input className="postInput" type="date" value={this.state.value} name="date" onChange={this.handleChangeDate}/>
                 </label>
                 <label>
                     Tool:
-                    <input type="text" value={this.state.value} name ="tool" onChange={this.handleChangeTool}/>
+                    <input className="postInput" type="text" value={this.state.value} name ="tool" onChange={this.handleChangeTool}/>
                 </label>
                 <label>
                     Cost:
-                    <input type="text" value={this.state.value} name ="cost" onChange={this.handleChangeCost}/>
+                    <input className="postInput" type="text" value={this.state.value} name ="cost" onChange={this.handleChangeCost}/>
                 </label>
-                <input type="submit" value="Отправить"/>
+                <input className="postInput" type="submit" value="Отправить"/>
             </form>
 
         );

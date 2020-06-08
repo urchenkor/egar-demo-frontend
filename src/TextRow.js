@@ -6,12 +6,12 @@ class TextRow extends React.Component {
 
         return (
             <tr>
-                <td>{subject.date}</td>
-                <td>{subject.tool}</td>
-                <td>${subject.cost}</td>
-                <td><button onClick={ () => {
+                <td className="tdDate">{subject.date}</td>
+                <td className='tdTool'>{subject.tool}</td>
+                <td className="tdCost">${subject.cost}</td>
+                <td className="tdEdit"><button className="editButton" onClick={ () => {
                     this.props.setEditMode(true)
-                }}>Редактировать</button></td>
+                }}>Edit</button></td>
             </tr>
         )
     }

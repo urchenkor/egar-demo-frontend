@@ -53,24 +53,23 @@ class EditRow extends React.Component {
         return (
 
                 <tr>
-                    <td>
+                    <td className="tdDate">
                         <input type="date" name={subject.date} placeholder={subject.date}
                                 value={this.state.date} onChange={this.handleChangeDate}/>
                     </td>
-                    <td>
+                    <td className="tdTool">
                         <input type="text" name={subject.tool} placeholder={subject.tool}
                                value={this.state.tool} onChange={this.handleChangeTool}/>
                     </td>
-                    <td>
+                    <td className="tdCost">
                         $<input type="text" name={subject.cost} placeholder={subject.cost}
                                value={this.state.cost} onChange={this.handleChangeCost}/>
                     </td>
-                    <td>
-                        <button onClick={ () => {this.props.setEditMode(false)}}>
-                            Выйти
+                    <td className="tdEdit">
+                        <button className="exitButton" onClick={ () => {this.props.setEditMode(false)}}>
+                            Exit
                         </button>
-                    </td>
-                    <td><button onClick={this.handleSubmit}>Сохранить</button></td>
+                        <button className="saveButton" onClick={this.handleSubmit}>Save</button></td>
                 </tr>
 
         )

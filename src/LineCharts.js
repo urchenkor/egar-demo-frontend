@@ -20,10 +20,11 @@ class RenderLineCharts extends React.Component {
     }
 
     render() {
+        this.componentDidMount();
         return (
-            <LineChart width={400} height={400} data={this.state.data}>
-                <Line type="monotone" dataKey="cost" stroke="#8884d8" />
-                <CartesianGrid stroke="#ccc" />
+            <LineChart width={750} height={400} data={this.state.data}>
+                <Line type="monotone" dataKey="cost" stroke="#6A4D7F" />
+                <CartesianGrid stroke="#A29BA7" />
                 <XAxis dataKey="date" />
                 <YAxis dataKey="cost" />
             </LineChart>

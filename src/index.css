@@ -12,17 +12,86 @@ code {
     monospace;
 }
 
+body {
+  background-color: #E3DCE8;
+  color: #6A4D7F;
+}
+
+div.mainContent {
+  margin: 0px 15% 0px 15%;
+  padding: 20px;
+  background-color: #DDCFE8;
+}
+
 table.mainTable {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px;
   border: thin solid black;
   border-collapse: collapse;
 }
 
 th, td {
-  width: 200px;
   height: 35px;
   border: thin solid black;
   padding: 5px;
+}
+
+td.tdDate {
+  text-align: center;
+  width: 130px;
+}
+
+td.tdTool {
+  text-align: center;
+  width: 250px;
+}
+
+td.tdCost {
+  text-align: center;
+  width: 130px;
+}
+
+td.tdEdit {
+  width: 140px;
+}
+
+button {
+  background-color: white;
+  border: thin solid black;
+}
+
+button.editButton {
+  width: 50px;
+  margin: 5px;
+}
+
+button.exitButton {
+  width: 50px;
+  margin: 5px;
+}
+
+button.saveButton {
+  width: 50px;
+  margin: 5px;
+}
+
+input {
+  border: thin solid black;
+  background-color: white;
+}
+
+input.postInput {
+  margin: 5px;
+}
+
+td.tdDate > input {
+  width: 125px;
+}
+
+td.tdTool > input {
+  width: 200px;
+}
+
+td.tdCost > input {
+  width: 100px;
 }
 
